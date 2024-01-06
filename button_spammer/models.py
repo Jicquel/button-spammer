@@ -7,4 +7,4 @@ class Action(models.Model):
 
 class Occurence(models.Model):
     action_name = models.ForeignKey(Action, on_delete=models.CASCADE)
-    occurence_date = models.DateTimeField("date field")
+    occurence_date = models.DateTimeField("date field", auto_now_add=True)
