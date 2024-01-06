@@ -1,0 +1,17 @@
+[
+    {
+       "model":"button_spammer.action",
+       "pk":"Exercice",
+       "fields": {}
+    },
+    {
+      "model":"button_spammer.action",
+      "pk":"Nettoyer les litieres",
+      "fields": {}
+   },
+   {
+      "model":"button_spammer.action",
+      "pk":"Faire jouer les chats",
+      "fields": {}
+   }
+ ]
