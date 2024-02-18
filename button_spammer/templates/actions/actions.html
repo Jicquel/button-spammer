@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Action</title>
+</head>
+
+<body>
+    {% if actions_list %}
+        <ul>
+        {% for action in actions_list %}
+            <li><a href="{% url 'action' action.action_name %}">{{ action.action_name }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No actions are available.</p>
+    {% endif %}
+</body>
