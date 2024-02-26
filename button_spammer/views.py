@@ -66,7 +66,7 @@ def action(request, action_name):
     return HttpResponse(template.render(context, request))
 
 
-def actions(request, format):
+def actions(request, format="web"):
     actions = Action.objects.all()
 
     template = loader.get_template("actions/actions.html")
