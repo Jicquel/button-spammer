@@ -8,22 +8,37 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Action',
+            name="Action",
             fields=[
-                ('action_name', models.CharField(max_length=200, primary_key=True, serialize=False)),
+                (
+                    "action_name",
+                    models.CharField(max_length=200, primary_key=True, serialize=False),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Occurence',
+            name="Occurence",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('occurence_date', models.DateTimeField(verbose_name='date field')),
-                ('action_name', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='polls.action')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("occurence_date", models.DateTimeField(verbose_name="date field")),
+                (
+                    "action_name",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="polls.action"
+                    ),
+                ),
             ],
         ),
     ]
