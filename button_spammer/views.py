@@ -50,7 +50,7 @@ def create_action(request):
 
     action = Action(action_name=action_name)
     action.save()
-    return HttpResponse("Action " + action_name + " has been created.")
+    return actions(request)
 
 
 def action(request, action_name):
