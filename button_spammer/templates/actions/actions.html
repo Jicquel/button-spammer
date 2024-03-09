@@ -1,19 +1,35 @@
-<!doctype html>
-<html lang="en-US">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="utf-8" />
-    <title>Action</title>
-</head>
+{% block title %}
+Actions
+{% endblock %}
 
-<body>
-    {% if actions_list %}
-        <ul>
-        {% for action in actions_list %}
-            <li><a href="{% url 'action' action.action_name %}">{{ action.action_name }}</a></li>
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>No actions are available.</p>
-    {% endif %}
-</body>
+{% block content %}
+
+<div class="container">
+    <a class="btn-primary btn mb-3" href="{% url 'create_action_form' %}">Create an action</a>
+
+    <div class="row">
+        <table class="table">
+            <caption>Actions</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Number of occurences</th>
+                </tr>
+            </thead>
+            <tbody style="display: block; max-height: 50vh; overflow-y: scroll">
+                {% if actions_list %}
+                {% for action in actions_list %}
+                <tr>
+                    <td><a href="{% url 'action' action.action_name %}">{{ action.action_name }}</a></td>
+                    <td>TODO</td>
+                </tr>
+                {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

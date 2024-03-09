@@ -3,7 +3,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path("", views.index, name="index"),
+    path("", views.actions, name="index"),
     path(
         "create_occurence/<str:action_name>/",
         views.create_occurence,
